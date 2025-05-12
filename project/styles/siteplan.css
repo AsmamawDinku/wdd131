@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family: "Your Primary Font", sans-serif;
     color: #333;
@@ -9,3 +10,16 @@ h1, h2 {
     color: #0066cc; /* Primary color */
 }
 
+=======
+body {
+    font-family: "Your Primary Font", sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+h1, h2 {
+    font-family: "Your Secondary Font", serif;
+    color: #0066cc; /* Primary color */
+}
+
+>>>>>>> beadd4d5215eb1de8906da2db1db1563c4528b72
