@@ -1,0 +1,18 @@
+/* Large screen styles */
+.temple-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+header {
+    padding: 1rem 3rem;
+}
+
+#primary-nav ul {
+    gap: 2rem;
+}
+
+main {
+    padding: 0 2rem;
+}
