@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Review</title>
+  <link rel="stylesheet" href="styles/form.css" />
+  <script defer src="scripts/form.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Product Review</h1>
+    <form method="get" action="review.html">
+      <label for="productName">Product Name</label>
+      <select id="productName" name="productName" required>
+        <option value="" disabled selected>Choose a Product ...</option>
+      </select>
+
+      <fieldset>
+        <legend>Overall Rating</legend>
+        <label><input type="radio" name="rating" value="1" required /> ★</label>
+        <label><input type="radio" name="rating" value="2" /> ★★</label>
+        <label><input type="radio" name="rating" value="3" /> ★★★</label>
+        <label><input type="radio" name="rating" value="4" /> ★★★★</label>
+        <label><input type="radio" name="rating" value="5" /> ★★★★★</label>
+      </fieldset>
+
+      <label for="installDate">Date of Installation</label>
+      <input type="date" id="installDate" name="installDate" required />
+
+      <fieldset>
+        <legend>Which features did you find useful in the product?<br><small>(Check all that apply)</small></legend>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li><label><input type="checkbox" id="durability" name="features" value="Durability" /> Durability</label></li>
+          <li><label><input type="checkbox" id="ease" name="features" value="Ease of Use" /> Ease of Use</label></li>
+          <li><label><input type="checkbox" id="performance" name="features" value="Performance" /> Performance</label></li>
+          <li><label><input type="checkbox" id="design" name="features" value="Design" /> Design</label></li>
+        </ul>
+      </fieldset>
+
+      <label for="review">Written Review <span style="color: gray;">(Optional)</span></label>
+      <textarea id="review" name="review" rows="4"></textarea>
+
+      <label for="userName">Your Name <span style="color: gray;">(Optional)</span></label>
+      <input type="text" id="userName" name="userName" />
+
+      <button type="submit">Post Review</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy;2025Asmamaw Dinku  Virginia<br>
+    Last Modification: 02/26/2024 13:56:10</p>
+  </footer>
+</body>
+</html>
