@@ -1,11 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Website Planning Document</title>
-  <link rel="stylesheet" href="styles/siteplan.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/siteplan.css">
 </head>
 <body>
   <header>
@@ -15,57 +17,62 @@
     <section>
       <h2>Site Name</h2>
       <p><strong>Explore McLean Trails</strong></p>
-      <p>This name was chosen to highlight the site's focus—helping users explore local walking, hiking, and biking trails in McLean, Virginia. It is clear, location-specific, and invites curiosity.</p>
+      <p>This name highlights our focus on helping users discover walking, hiking, and biking trails in McLean, Virginia.</p>
     </section>
 
     <section>
       <h2>Site Purpose</h2>
-      <p>The site provides information about local nature trails in McLean, VA, including trail difficulty, distance, scenic views, user reviews, and amenities such as parking and picnic areas. It will also offer seasonal tips and event announcements related to outdoor activities.</p>
+      <p>Provides comprehensive trail information including difficulty levels, distances, amenities, and user reviews for McLean's outdoor spaces.</p>
     </section>
- <!-- Test update --> 
+
     <section>
       <h2>Scenarios</h2>
       <ul>
-        <li>"Where can I find easy hiking trails to visit with my kids in McLean?"</li>
-        <li>"Which McLean trails are best for biking and have rest areas along the way?"</li>
+        <li>Where can I find kid-friendly hiking trails in McLean?</li>
+        <li>Which trails have bike rentals and rest areas?</li>
       </ul>
     </section>
 
     <section>
       <h2>Color Schema</h2>
-      <p>Primary Color: <span style="color:#2F4F4F;">#2F4F4F</span> (Dark Slate Gray – used for headings to reflect nature and depth)</p>
-      <p>Secondary Color: <span style="background-color:#E0F7FA;">#E0F7FA</span> (Light Cyan – used for backgrounds to keep the feel fresh and clean)</p>
+      <div class="color-swatch" style="background-color: #2F4F4F;"></div>
+      <p>Primary: #2F4F4F (Dark Slate Gray) - Used for headings and navigation</p>
+      <div class="color-swatch" style="background-color: #E0F7FA;"></div>
+      <p>Secondary: #E0F7FA (Light Cyan) - Used for backgrounds and cards</p>
     </section>
 
     <section>
       <h2>Typography</h2>
-      <p>Primary Font: <strong>"Roboto"</strong> (Used for body text – modern and easy to read)</p>
-      <p>Secondary Font: <strong>"Merriweather"</strong> (Used for headings – clean and professional)</p>
+      <p class="merriweather">Heading Font: Merriweather (Bold 700)</p>
+      <p class="roboto">Body Font: Roboto (Regular 400)</p>
     </section>
 
     <section>
       <h2>Wireframes</h2>
-      <h3>Mobile View</h3>
-      <ul>
-        <li>Hamburger menu at top</li>
-        <li>Scrollable list of trails with images</li>
-        <li>Filter by type (hiking, biking, family-friendly)</li>
-        <li>Call-to-action button for event signups</li>
-      </ul>
-      <img src="images/wireframe-mobile.webp" alt="Mobile Wireframe"/>
-
-      <h3>Desktop View</h3>
-      <ul>
-        <li>Top navigation bar</li>
-        <li>Hero image with welcome message</li>
-        <li>Three-column layout for featured trails, filters, and announcements</li>
-        <li>Footer with contact info and links</li>
-      </ul>
-      <img src="images/wireframe-desktop.webp" alt="Desktop Wireframe"/>
+      <div class="wireframes">
+        <div>
+          <h3>Mobile View</h3>
+          <img src="images/wm.jpg" alt="Mobile wireframe">
+          <ul>
+            <li>Hamburger menu navigation</li>
+            <li>Single column trail cards</li>
+            <li>Filter button at top</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Desktop View</h3>
+          <img src="images/wd.jpg" alt="Desktop wireframe">
+          <ul>
+            <li>Horizontal navigation bar</li>
+            <li>3-column layout</li>
+            <li>Featured trail highlights</li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
   <footer>
-    <p>&copy; 2025 | Asmamaw Dinku</p>
+   <p>&copy; 2025 | Asmamaw Dinku 🌲🚴‍♂️🌄💚</p>
   </footer>
 </body>
 </html>
