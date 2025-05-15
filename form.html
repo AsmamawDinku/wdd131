@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dinku's Product Review</title>
- <link rel="stylesheet" href="styles/form.css">
-<script src="scripts/form.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your product reviews and help others make informed decisions">
+  <title>Dinku's Product Review System</title>
+  <link rel="stylesheet" href="styles/form.css">
+  <script src="scripts/form.js" defer></script>
 </head>
 <body>
+  <header>
+    <h1>Dinku's Product Review</h1>
+  </header>
+  
   <main>
-    <h1>Dink's Product Review</h1>
-    <form method="get" action="review.html">
-      <label for="productName">Product Name</label>
-      <select id="productName" name="productName" required>
-        <option value="" disabled selected>Choose a Product ...</option>
-      </select>
+    <form id="reviewForm" method="get" action="review.html" novalidate>
+      <div class="form-group">
+        <label for="productName">Product Name <span class="required">*</span></label>
+        <select id="productName" name="productName" required aria-required="true">
+          <option value="" disabled selected>Choose a Product...</option>
+        </select>
+      </div>
 
-      <fieldset>
-        <legend>Overall Rating</legend>
-        <label><input type="radio" name="rating" value="1" required /> ★</label>
-        <label><input type="radio" name="rating" value="2" /> ★★</label>
-        <label><input type="radio" name="rating" value="3" /> ★★★</label>
-        <label><input type="radio" name="rating" value="4" /> ★★★★</label>
-        <label><input type="radio" name="rating" value="5" /> ★★★★★</label>
+      <fieldset class="form-group">
+        <legend>Overall Rating <span class="required">*</span></legend>
+        <div class="rating-options">
+          <input type="radio" id="rating1" name="rating" value="1" required aria-required="true">
+          <label for="rating1">★</label>
+          
+          <input type="radio" id="rating2" name="rating" value="2">
+          <label for="rating2">★★</label>
+          
+          <input type="radio" id="rating3" name="rating" value="3">
+          <label for="rating3">★★★</label>
+          
+          <input type="radio" id="rating4" name="rating" value="4">
+          <label for="rating4">★★★★</label>
+          
+          <input type="radio" id="rating5" name="rating" value="5">
+          <label for="rating5">★★★★★</label>
+        </div>
       </fieldset>
 
-      <label for="installDate">Date of Installation</label>
-      <input type="date" id="installDate" name="installDate" required />
+      <div class="form-group">
+        <label for="installDate">Date of Installation <span class="required">*</span></label>
+        <input type="date" id="installDate" name="installDate" required aria-required="true">
+      </div>
 
-      <fieldset>
-        <legend>Which features did you find useful in the product?<br><small>(Check all that apply)</small></legend>
-        <ul style="list-style-type: none; padding-left: 0;">
-          <li><label><input type="checkbox" id="durability" name="features" value="Durability" /> Durability</label></li>
-          <li><label><input type="checkbox" id="ease" name="features" value="Ease of Use" /> Ease of Use</label></li>
-          <li><label><input type="checkbox" id="performance" name="features" value="Performance" /> Performance</label></li>
-          <li><label><input type="checkbox" id="design" name="features" value="Design" /> Design</label></li>
+      <fieldset class="form-group">
+        <legend>Which features did you find useful in the product? <span class="optional">(Check all that apply)</span></legend>
+        <ul class="features-list">
+          <li>
+            <input type="checkbox" id="durability" name="features" value="Durability">
+            <label for="durability">Durability</label>
+          </li>
+          <li>
+            <input type="checkbox" id="ease" name="features" value="Ease of Use">
+            <label for="ease">Ease of Use</label>
+          </li>
+          <li>
+            <input type="checkbox" id="performance" name="features" value="Performance">
+            <label for="performance">Performance</label>
+          </li>
+          <li>
+            <input type="checkbox" id="design" name="features" value="Design">
+            <label for="design">Design</label>
+          </li>
         </ul>
       </fieldset>
 
-      <label for="review">Written Review <span style="color: gray;">(Optional)</span></label>
-      <textarea id="review" name="review" rows="4"></textarea>
+      <div class="form-group">
+        <label for="review">Written Review <span class="optional">(Optional)</span></label>
+        <textarea id="review" name="review" rows="4" aria-describedby="reviewHelp"></textarea>
+        <small id="reviewHelp" class="form-text">Share your detailed experience with the product</small>
+      </div>
 
-      <label for="userName">Your Name <span style="color: gray;">(Optional)</span></label>
-      <input type="text" id="userName" name="userName" />
+      <div class="form-group">
+        <label for="userName">Your Name <span class="optional">(Optional)</span></label>
+        <input type="text" id="userName" name="userName" aria-describedby="nameHelp">
+        <small id="nameHelp" class="form-text">We'll display this with your review</small>
+      </div>
 
-      <button type="submit">Post Review</button>
+      <button type="submit" class="submit-btn">Post Review</button>
     </form>
   </main>
 
   <footer>
-    <p>&copy;2025 Asmamaw Dinku  Virginia<br>
-    Last Modification: 02/26/2024 13:56:10</p>
+    <p>&copy; <span id="currentYear"></span> Asmamaw Dinku | Virginia</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+    <script>
+      // Get the current year and last modified date
+      const year = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = year;
+      document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
   </footer>
 </body>
 </html>

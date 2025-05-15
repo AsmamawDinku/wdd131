@@ -1,17 +1,59 @@
-const products = [
-  { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },
-  { id: "fc-2050", name: "power laces", averagerating: 4.7 },
-  { id: "fs-1987", name: "time circuits", averagerating: 3.5 },
-  { id: "ac-2000", name: "low voltage reactor", averagerating: 3.9 },
-  { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
-];
+document.addEventListener('DOMContentLoaded', function() {
+  // Set current year and last modified date in footer
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+  document.getElementById('lastModified').textContent = document.lastModified;
 
-window.addEventListener("DOMContentLoaded", () => {
-  const select = document.querySelector("#productName");
+  // Product array to populate the select dropdown
+  const products = [
+    { id: 'prod1', name: 'Ultra HD Smart TV' },
+    { id: 'prod2', name: 'Wireless Noise-Cancelling Headphones' },
+    { id: 'prod3', name: 'Ergonomic Office Chair' },
+    { id: 'prod4', name: 'Stainless Steel Water Bottle' },
+    { id: 'prod5', name: 'Bluetooth Portable Speaker' }
+  ];
+
+  // Populate product dropdown
+  const productSelect = document.getElementById('productName');
   products.forEach(product => {
-    const option = document.createElement("option");
+    const option = document.createElement('option');
     option.value = product.id;
     option.textContent = product.name;
-    select.appendChild(option);
+    productSelect.appendChild(option);
+  });
+
+  // Form submission handling
+  const reviewForm = document.getElementById('reviewForm');
+  reviewForm.addEventListener('submit', function(e) {
+    // Validate form before submission
+    if (!this.checkValidity()) {
+      e.preventDefault();
+      // Add visual feedback for invalid fields
+      const invalidFields = this.querySelectorAll(':invalid');
+      invalidFields.forEach(field => {
+        field.style.borderColor = '#e74c3c';
+        const errorMsg = document.createElement('small');
+        errorMsg.className = 'error-message';
+        errorMsg.textContent = 'This field is required';
+        errorMsg.style.color = '#e74c3c';
+        field.parentNode.appendChild(errorMsg);
+      });
+    } else {
+      // Store review count in localStorage
+      let reviewCount = localStorage.getItem('reviewCount') || 0;
+      reviewCount++;
+      localStorage.setItem('reviewCount', reviewCount);
+    }
+  });
+
+  // Clear error styles when fields are interacted with
+  const formFields = reviewForm.querySelectorAll('input, select, textarea');
+  formFields.forEach(field => {
+    field.addEventListener('input', function() {
+      this.style.borderColor = '';
+      const errorMsg = this.parentNode.querySelector('.error-message');
+      if (errorMsg) {
+        errorMsg.remove();
+      }
+    });
   });
 });
