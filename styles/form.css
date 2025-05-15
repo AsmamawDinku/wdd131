@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #1f3c88;      /* Royal blue */
-  --secondary-color: #376996;    /* Steel blue */
-  --accent-color: #5fb9ff;       /* Sky blue */
-  --light-gray: #f0f4f8;         /* Cloudy background */
-  --dark-gray: #4a6481;          /* Muted navy */
-  --card-bg: #e6eef5;            /* Very pale blue */
+  --primary-color: #1f3c88;      
+  --secondary-color: #376996;    
+  --accent-color: #5fb9ff;       
+  --light-gray: #f0f4f8;         
+  --dark-gray: #4a6481;          
+  --card-bg: #e6eef5;            
   --white: #ffffff;
   --black: #2b2b2b;
 }
