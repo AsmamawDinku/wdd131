@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Portfolio | ASME Software Solutions</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <!-- Same header as index.html -->
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Our Portfolio</h1>
+        <p>Explore our successful projects and client success stories</p>
+      </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+      <div class="container">
+        <div class="coming-soon-content">
+          <div class="coming-soon-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2>Portfolio Coming Soon</h2>
+          <p>We're currently preparing our latest case studies and project highlights to showcase our work. Our portfolio will be available shortly.</p>
+          <p>In the meantime, please check out our <a href="services.html">services</a> or <a href="contact.html">contact us</a> to discuss your project needs.</p>
+          
+          <div class="countdown">
+            <div class="countdown-item">
+              <span id="days">00</span>
+              <small>Days</small>
+            </div>
+            <div class="countdown-item">
+              <span id="hours">00</span>
+              <small>Hours</small>
+            </div>
+            <div class="countdown-item">
+              <span id="minutes">00</span>
+              <small>Minutes</small>
+            </div>
+            <div class="countdown-item">
+              <span id="seconds">00</span>
+              <small>Seconds</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="portfolio-testimonials">
+      <div class="container">
+        <h2 class="section-title">Client Success Stories</h2>
+        <div class="testimonial-cards">
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>ASME delivered our mobile app ahead of schedule and under budget. Their attention to detail and user experience focus resulted in 40% higher engagement than industry benchmarks.</p>
+            </div>
+            <div class="client-info">
+              <img src="images/mainprofile.jpeg" alt="Ad" loading="lazy">
+              <div>
+                <h4>James Wilson</h4>
+                <span>CEO, FitTrack</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+              <p>The custom ERP system ASME built transformed our operations. What used to take days now happens in real-time, and we've seen a 28% increase in operational efficiency.</p>
+            </div>
+            <div class="client-info">
+              <img src="images/asmeprofile2.jpeg" alt="Maria Garcia" loading="lazy">
+              <div>
+                <h4>Maria Garcia</h4>
+                <span>COO, RetailPro</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to start your project?</h2>
+        <p>Let's create something amazing together.</p>
+        <a href="contact.html" class="btn btn-primary btn-large">Get Started</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <!-- Same footer as index.html -->
+  </footer>
+
+  <script src="scripts/script.js"></script>
+  
+  <!-- Countdown Timer Script -->
+  <script>
+    // Set the date we're counting down to (1 month from now)
+    const countDownDate = new Date();
+    countDownDate.setMonth(countDownDate.getMonth() + 1);
+    
+    // Update the countdown every 1 second
+    const countdownTimer = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+      
+      // Time calculations
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      // Display the result
+      document.getElementById("days").textContent = days.toString().padStart(2, '0');
+      document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+      
+      // If the countdown is finished
+      if (distance < 0) {
+        clearInterval(countdownTimer);
+        document.querySelector(".countdown").innerHTML = "<p>Our portfolio is now available!</p>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
