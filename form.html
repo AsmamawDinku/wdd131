@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Review</title>
+  <!-- ====== external stylesheet ====== -->
+  <link rel="stylesheet" href="styles/form.css"/>
+</head>
+
+<body>
+  <main>
+    <!-- ====== card header ====== -->
+    <h2>Product Review</h2>
+
+    <!-- ====== review form ====== -->
+    <form name="form" id="reviewForm">
+      <!-- product list -->
+      <label for="product">Product Name</label>
+      <select id="product" name="product" required>
+        <option value="">Choose a Product …</option>
+<option value="book_of_mormon">Book of Mormon (Missionary Edition)</option>
+<option value="quad_english">Quadruple Combination – English, Genuine Leather</option>
+<option value="come_follow_me_manual">Come, Follow Me — Home‑Study Manual</option>
+<option value="preach_my_gospel">Preach My Gospel (2nd Edition)</option>
+<option value="ctr_ring">CTR Ring – Stainless Steel</option>
+<option value="oil_vial">Consecrated Oil Vial – Keychain</option>
+<option value="temple_recommend_holder">Temple Recommend Holder – Faux Leather</option>
+<option value="primary_manual">Primary Manual – Ages 8–11</option>
+<option value="for_strength_of_youth">For the Strength of Youth Pamphlet</option>
+<option value="familyproclamation_print">“The Family: A Proclamation to the World” Print</option>
+      </select>
+
+      <!-- star rating -->
+      <fieldset class="rating">
+        <legend>Overall Rating</legend>
+        <div class="rating-options">
+          <label><input type="radio" name="rating" value="1" required> ★</label>
+          <label><input type="radio" name="rating" value="2"> ★★</label>
+          <label><input type="radio" name="rating" value="3"> ★★★</label>
+          <label><input type="radio" name="rating" value="4"> ★★★★</label>
+          <label><input type="radio" name="rating" value="5"> ★★★★★</label>
+        </div>
+      </fieldset>
+
+      <!-- install date -->
+      <label for="installDate">Date of Installation</label>
+      <input type="date" id="installDate" name="installDate" required>
+
+      <!-- feature checkboxes -->
+      <fieldset>
+        <legend>Which features did you find useful in the product?<br>
+          <em>(Check all that apply)</em></legend>
+        <label><input type="checkbox" name="features" value="Durability"> Durability</label>
+        <label><input type="checkbox" name="features" value="Ease of Use"> Ease&nbsp;of&nbsp;Use</label>
+        <label><input type="checkbox" name="features" value="Performance"> Performance</label>
+        <label><input type="checkbox" name="features" value="Design"> Design</label>
+      </fieldset>
+
+      <!-- written review -->
+      <label for="writtenReview">Written Review <span class="optional">(Optional)</span></label>
+      <textarea id="writtenReview" name="writtenReview" rows="4"></textarea>
+
+      <!-- reviewer name -->
+      <label for="name">Your Name <span class="optional">(Optional)</span></label>
+      <input type="text" id="name" name="name">
+
+      <!-- submit -->
+      <button type="submit">Post Review</button>
+    </form>
+
+    <!-- ====== compact footer, matches card width ====== -->
+    <footer class="footer-card">
+      <div class="footer-spacer"></div>
+      <p>&copy; 2025 🧠💼 Asmamaw Dinku 🚀<br>📍 McLean, VA 🌆USA<br>
+      Last Modification: <span id="lastModified"></span></p>
+    </footer>
+  </main>
+  <script src="scripts/form.js"></script>
+</body>
+</html>

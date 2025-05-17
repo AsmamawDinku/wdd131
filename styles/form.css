@@ -1,0 +1,129 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  background: #ddd0db;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+}
+
+main {
+  position: relative;
+  padding-bottom: 0; 
+}
+
+
+
+h2 {
+  background-color: #2c001e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label, legend {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.rating-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.rating-options label {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 1.5rem; 
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+button[type="submit"] {
+  margin-bottom: 1.5rem; 
+}
+
+.optional {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.9em;
+  color: #444;
+}
+
+.footer-spacer {
+  height: 1rem;
+}
+
+footer {
+  background-color: #2c001e;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  margin-top: 0.5rem; 
+}
+
+.footer-card {
+  margin: 0 -1.5rem -1.5rem -1.5rem; 
+  width: auto; 
+}
+.footer-spacer {
+  height: 1.5rem;
+  background: transparent; 
+}
