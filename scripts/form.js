@@ -4,7 +4,7 @@ document.getElementById('lastModified').textContent =
   lastMod.toLocaleString('en-GB', { dateStyle: 'short', timeStyle: 'medium' });
 
 // Handle form submission
-document.forms['form'].addEventListener('submit', function(e) {
+document.forms['form'].addEventListener('submit', function (e) {
   e.preventDefault();
 
   const data = new FormData(this);
