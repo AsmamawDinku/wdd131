@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mclean, VA</title>
+  <title>McLean, VA</title>
+  <meta name="description" content="Detailed info and weather for McLean, VA." />
+  <meta name="author" content="Asmamaw Dinku" />
+  
+  <!-- Google Fonts (linked properly, no @import) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  
+  <!-- Main CSS -->
   <link rel="stylesheet" href="styles/place.css" />
 </head>
 <body>
   <header>
-    <h1>Mclean, VA</h1>
+    <h1>McLean, VA</h1>
   </header>
 
-  <div class="background-container">
-    <section class="data-box">
-      <h2>Data</h2>
-      <ul>
-        <li><strong>Population:</strong> 47,921</li>
-        <li><strong>County:</strong> Fairfax</li>
-        <li><strong>State:</strong> Virginia</li>
-        <li><strong>Country:</strong> United States</li>
-        <li><strong>Time Zone:</strong> Eastern (UTC-5/-4)</li>
-        <li><strong>Zip Codes:</strong> 22101, 22102</li>
-        <li><strong>Area:</strong> 24.5 sq mi</li>
-        <li><strong>Elevation:</strong> 400 ft</li>
-        <li><strong>Coordinates:</strong> 38.9333° N, 77.2000° W</li>
-        <li><strong>Founded:</strong> 1742</li>
-        <li><strong>Climate:</strong> Humid Subtropical</li>
-        <li><strong>Avg. Temperature:</strong> 55°F</li>
-        <li><strong>Rainfall:</strong> 40 in</li>
-        <li><strong>Population Density:</strong> 1,950/sq mi</li>
-        <li><strong>Nearby Attractions:</strong> Great Falls Park, Wolf Trap</li>
-        <li><strong>Local Government:</strong> Fairfax County Board</li>
-        <li><strong>School District:</strong> Fairfax County Public Schools</li>
-      </ul>
-    </section>
+  <main>
+    <div class="background-container">
+      <section class="data-box">
+        <h2>Data</h2>
+        <ul>
+          <li><strong>Population:</strong> 47,921</li>
+          <li><strong>County:</strong> Fairfax</li>
+          <li><strong>State:</strong> Virginia</li>
+          <li><strong>Country:</strong> United States</li>
+          <li><strong>Time Zone:</strong> Eastern (UTC-5/-4)</li>
+          <li><strong>Zip Codes:</strong> 22101, 22102</li>
+          <li><strong>Area:</strong> 24.5 sq mi</li>
+          <li><strong>Elevation:</strong> 400 ft</li>
+          <li><strong>Coordinates:</strong> 38.9333° N, 77.2000° W</li>
+          <li><strong>Founded:</strong> 1742</li>
+          <li><strong>Climate:</strong> Humid Subtropical</li>
+          <li><strong>Avg. Temperature:</strong> 55°F</li>
+          <li><strong>Rainfall:</strong> 40 in</li>
+          <li><strong>Population Density:</strong> 1,950/sq mi</li>
+          <li><strong>Nearby Attractions:</strong> Great Falls Park, Wolf Trap</li>
+          <li><strong>Local Government:</strong> Fairfax County Board</li>
+          <li><strong>School District:</strong> Fairfax County Public Schools</li>
+        </ul>
+      </section>
 
-    <section class="weather-box">
-      <h2>Weather</h2>
-      <ul>
-        <li><strong>Temperature:</strong> 42°F</li>
-        <li><strong>Condition:</strong> Sunny</li>
-        <li><strong>Wind:</strong> 12 mph</li>
-        <li><strong>Wind Chill:</strong> 33°F</li>
-        <li><strong>Humidity:</strong> 50%</li>
-        <li><strong>Forecast:</strong> Clear</li>
-        <li><strong>High/Low:</strong> 45°F / 30°F</li>
-        <li><strong>Visibility:</strong> 10 miles</li>
-        <li><strong>Sunrise:</strong> 6:45 AM</li>
-        <li><strong>Sunset:</strong> 5:45 PM</li>
-        <li><strong>UV Index:</strong> 3</li>
-        <li><strong>Pressure:</strong> 30.12 inHg</li>
-        <li><strong>Weather Alert:</strong> None</li>
-        <li><strong>Station:</strong> Dulles International Airport</li>
-      </ul>
-    </section>
-  </div>
+      <section class="weather-box">
+        <h2>Weather</h2>
+        <ul>
+          <li><strong>Temperature:</strong> 42°F</li>
+          <li><strong>Condition:</strong> Sunny</li>
+          <li><strong>Wind:</strong> 12 mph</li>
+          <li><strong>Wind Chill:</strong> <span id="wind-chill">33°F</span></li>
+          <li><strong>Humidity:</strong> 50%</li>
+          <li><strong>Forecast:</strong> Clear</li>
+          <li><strong>High/Low:</strong> 45°F / 30°F</li>
+          <li><strong>Visibility:</strong> 10 miles</li>
+          <li><strong>Sunrise:</strong> 6:45 AM</li>
+          <li><strong>Sunset:</strong> 5:45 PM</li>
+          <li><strong>UV Index:</strong> 3</li>
+          <li><strong>Pressure:</strong> 30.12 inHg</li>
+          <li><strong>Weather Alert:</strong> None</li>
+          <li><strong>Station:</strong> Dulles International Airport</li>
+        </ul>
+      </section>
+    </div>
+  </main>
 
   <footer>
     <p>&copy; <span id="year"></span> Asmamaw Dinku - McLean, VA</p>
     <p>Last Modification: <span id="lastModified"></span></p>
   </footer>
-    <script>
-        // Get the current year and last modified date
-        const year = new Date().getFullYear();
-        document.getElementById("year").textContent = year;
-        document.getElementById("lastModified").textContent = document.lastModified;
-    </script>
-    <script src="scripts/place.js"></script>
+
+  <!-- Inline JS to set year and last modified -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
+
+    // Wind Chill Calculation
+    function calculateWindChill(temp, windSpeed) {
+      return Math.round(
+        35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16)
+      );
+    }
+
+    const temp = 42; // Temperature in °F from data
+    const windSpeed = 12; // Wind speed in mph from data
+    const windChillElement = document.getElementById('wind-chill');
+
+    if (temp <= 50 && windSpeed > 3) {
+      windChillElement.textContent = calculateWindChill(temp, windSpeed) + '°F';
+    } else {
+      windChillElement.textContent = "N/A";
+    }
+  </script>
+
+  <!-- External JS with defer -->
+  <script src="scripts/place.js" defer></script>
 </body>
 </html>

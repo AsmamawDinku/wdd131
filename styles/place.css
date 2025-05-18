@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+:root {
+  --primary-color: #002366;
+  --accent-color: #bf0a30;
+  --background-color: #f4f6f8;
+  --text-color: #333;
+  --white-transparent: rgba(255, 255, 255, 0.95);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --font-family: 'Roboto', sans-serif;
+}
 
 /* ---------- Base ---------- */
 *,
@@ -9,18 +17,18 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  background-color: #f4f6f8;
-  color: #333;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 /* ---------- Header ---------- */
 header {
-  background-color: #002366;
+  background-color: var(--primary-color);
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
 h1 {
@@ -40,12 +48,12 @@ h1 {
 
 .data-box,
 .weather-box {
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: var(--white-transparent);
   padding: 2rem;
   border-radius: 1rem;
   width: 100%;
   max-width: 500px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px var(--shadow-color);
   transition: transform 0.2s ease;
 }
 
@@ -55,8 +63,8 @@ h1 {
 }
 
 h2 {
-  color: #002366;
-  border-bottom: 2px solid #bf0a30;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--accent-color);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -74,7 +82,7 @@ li {
 
 /* ---------- Footer ---------- */
 footer {
-  background-color: #002366;
+  background-color: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 1rem;
