@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>McLean, Virginia - Community Information and Weather</title>
-  <meta name="description" content="Comprehensive guide to McLean, VA including population data, local government information, weather conditions, and area attractions.">
-  <meta name="author" content="Asmamaw Y. Dinku">
+  <title>McLean, VA | Community Profile | WDD 131 Project</title>
+  <meta name="description" content="Community profile of McLean, Virginia including demographics, weather data, and local information for WDD 131 course project">
+  <meta name="author" content="Asmamaw Dinku - WDD 131 Student">
   
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Main CSS -->
@@ -15,11 +17,17 @@
 </head>
 <body>
   <header>
-    <h1>McLean, Virginia - Community Profile</h1>
+    <h1>McLean, Virginia Community Profile</h1>
   </header>
 
   <main>
     <div class="background-container">
+      <picture>
+        <source srcset="images/tysons.webp" type="image/webp">
+        <source srcset="images/tysons.jpg" type="image/jpeg"> 
+        <img src="images/tysons.jpg" alt="McLean VA landscape" width="800" height="600" loading="lazy">
+      </picture>
+      
       <section class="data-box">
         <h2>Community Data</h2>
         <ul>
@@ -66,30 +74,14 @@
   </main>
 
   <footer>
-    <p>&copy; <span id="current-year"></span> | Asmamaw Y. Dinku | McLean, VA</p>
+    <p>&copy; <span id="current-year"></span> | Asmamaw Dinku | McLean, VA</p>
     <p>Last Modified: <span id="last-modified"></span></p>
+    <a href="https://jigsaw.w3.org/css-validator/check/referer">
+      <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" 
+           alt="Valid CSS!" 
+           style="border:0;width:88px;height:31px">
+    </a>
   </footer>
-
-  <script>
-    // Footer information
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
-
-    // Wind Chill Calculation
-    function calculateWindChill(temp, windSpeed) {
-      return Math.round(35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16));
-    }
-
-    const temp = parseInt(document.getElementById('temp').textContent);
-    const windSpeed = parseInt(document.getElementById('wind-speed').textContent);
-    const windChillElement = document.getElementById('wind-chill');
-
-    if (temp <= 50 && windSpeed > 3) {
-      windChillElement.textContent = calculateWindChill(temp, windSpeed);
-    } else {
-      windChillElement.textContent = "N/A";
-    }
-  </script>
 
   <script src="scripts/place.js" defer></script>
 </body>
