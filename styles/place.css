@@ -55,6 +55,7 @@ main {
   border-radius: 8px;
   margin: 1rem auto;
   max-width: 1200px;
+  position: relative;
 }
 
 .background-container img {
@@ -120,6 +121,21 @@ footer p {
   font-size: 0.9rem;
 }
 
+/* SVG Container */
+.svg-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0.8;
+}
+
+/* Validation Badge */
+.validation-badge img {
+  border: 0;
+  width: 88px;
+  height: 31px;
+}
+
 @media (max-width: 768px) {
   .background-container {
     padding: 1rem;
@@ -133,6 +149,10 @@ footer p {
   
   h2 {
     font-size: 1.3rem;
+  }
+  
+  .svg-container {
+    display: none;
   }
 }
 
