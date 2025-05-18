@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>McLean, VA</title>
-  <meta name="description" content="Detailed info and weather for McLean, VA." />
-  <meta name="author" content="Asmamaw Dinku" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McLean, Virginia - Community Information and Weather</title>
+  <meta name="description" content="Comprehensive guide to McLean, VA including population data, local government information, weather conditions, and area attractions.">
+  <meta name="author" content="Asmamaw Y. Dinku">
   
-  <!-- Google Fonts (linked properly, no @import) -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   
   <!-- Main CSS -->
-  <link rel="stylesheet" href="styles/place.css" />
+  <link rel="stylesheet" href="styles/place.css">
 </head>
 <body>
   <header>
-    <h1>McLean, VA</h1>
+    <h1>McLean, Virginia - Community Profile</h1>
   </header>
 
   <main>
     <div class="background-container">
       <section class="data-box">
-        <h2>Data</h2>
+        <h2>Community Data</h2>
         <ul>
           <li><strong>Population:</strong> 47,921</li>
           <li><strong>County:</strong> Fairfax</li>
@@ -44,12 +44,12 @@
       </section>
 
       <section class="weather-box">
-        <h2>Weather</h2>
+        <h2>Current Weather</h2>
         <ul>
-          <li><strong>Temperature:</strong> 42°F</li>
+          <li><strong>Temperature:</strong> <span id="temp">42</span>°F</li>
           <li><strong>Condition:</strong> Sunny</li>
-          <li><strong>Wind:</strong> 12 mph</li>
-          <li><strong>Wind Chill:</strong> <span id="wind-chill">33°F</span></li>
+          <li><strong>Wind:</strong> <span id="wind-speed">12</span> mph</li>
+          <li><strong>Wind Chill:</strong> <span id="wind-chill">33</span>°F</li>
           <li><strong>Humidity:</strong> 50%</li>
           <li><strong>Forecast:</strong> Clear</li>
           <li><strong>High/Low:</strong> 45°F / 30°F</li>
@@ -66,34 +66,31 @@
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Asmamaw Dinku - McLean, VA</p>
-    <p>Last Modification: <span id="lastModified"></span></p>
+    <p>&copy; <span id="current-year"></span> | Asmamaw Y. Dinku | McLean, VA</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
   </footer>
 
-  <!-- Inline JS to set year and last modified -->
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
+    // Footer information
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
 
     // Wind Chill Calculation
     function calculateWindChill(temp, windSpeed) {
-      return Math.round(
-        35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16)
-      );
+      return Math.round(35.74 + 0.6215 * temp - 35.75 * Math.pow(windSpeed, 0.16) + 0.4275 * temp * Math.pow(windSpeed, 0.16));
     }
 
-    const temp = 42; // Temperature in °F from data
-    const windSpeed = 12; // Wind speed in mph from data
+    const temp = parseInt(document.getElementById('temp').textContent);
+    const windSpeed = parseInt(document.getElementById('wind-speed').textContent);
     const windChillElement = document.getElementById('wind-chill');
 
     if (temp <= 50 && windSpeed > 3) {
-      windChillElement.textContent = calculateWindChill(temp, windSpeed) + '°F';
+      windChillElement.textContent = calculateWindChill(temp, windSpeed);
     } else {
       windChillElement.textContent = "N/A";
     }
   </script>
 
-  <!-- External JS with defer -->
   <script src="scripts/place.js" defer></script>
 </body>
 </html>
